@@ -14,6 +14,12 @@
 <body>
 
     <div class="wrapper">
+        <div class="feedback__alert">
+            <div class="feedback__alertBody">
+                <div class="alert__Icon"><img src="./assets/img/alert_Icon.svg" alt=""></div>
+                <div class="alert__text">Ваше сообщение успешно отправлено, мы ответим вам в ближайшее время)</div>
+            </div>
+        </div>
         <nav class="toolbar">
             <div class="container">
                 <div class="toolbar__Body">
@@ -212,8 +218,8 @@
                         <div class="contact__Title">Связаться с нами</div>
                         <div class="contact__Desc">Остались вопросы? Оставьте заявку для получения консультации</div>
                         <form action="" class="contactForm">
-                            <input type="text" placeholder="Имя">
-                            <input type="text" placeholder="Телефон">
+                            <input type="text" placeholder="Имя" name="name" required>
+                            <input type="tel" placeholder="Телефон" name="phone" required oninput="this.value=this.value.replace(/[^0-9]/g,'',);">
                             <button type="submit">ОТПРАВИТЬ</button>
                         </form>
                     </div>
@@ -323,8 +329,8 @@
                         <div class="contact__Title">Связаться с нами</div>
                         <div class="contact__Desc">Остались вопросы? Оставьте заявку для получения консультации</div>
                         <form action="" class="contactForm">
-                            <input type="text" placeholder="Имя">
-                            <input type="text" placeholder="Телефон">
+                            <input type="text" placeholder="Имя" name="name" required >
+                            <input type="tel" placeholder="Телефон" name="phone" required oninput="this.value=this.value.replace(/[^0-9]/g,'',);">
                             <button type="submit">ОТПРАВИТЬ</button>
                         </form>
                     </div>
@@ -348,7 +354,7 @@
             </div>
         </footer>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./js/main.js"></script>
 </body>
 
