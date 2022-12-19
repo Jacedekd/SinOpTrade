@@ -14,6 +14,7 @@ body {
     font-family: 'PF BeauSans Pro';
 }
 
+
 .wrapper {
     max-width: 100vw;
     position: relative;
@@ -82,6 +83,7 @@ body {
 
 .header {
     padding: 50px 0;
+    /* background-color: #F1F1F1; */
 }
 
 .header__Body {
@@ -153,7 +155,7 @@ body {
     font-style: normal;
     font-weight: 800;
     font-size: 54px;
-    line-height: 80px;
+    line-height: 73px;
     color: #073158;
 
 }
@@ -164,19 +166,26 @@ body {
     /* align-items: center; */
 }
 
+.header__Title span img {
+    width: 50px;
+    height: 50px;
+    padding-top: 10px;
+}
+
 .header__Desc {
     font-style: normal;
     font-weight: 500;
     font-size: 22px;
     line-height: 28px;
     color: #000000;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .header__BtnBlock {
     display: flex;
     column-gap: 15px;
     align-items: center;
+
 }
 
 .header__Btn1 {
@@ -203,11 +212,94 @@ body {
     display: flex;
     align-items: center;
     column-gap: 25px;
+    /* position: relative; */
 }
+
+
+#wrap {
+    width: 59px;
+    height: 59px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+/* / * Нижний круг * / */
+#wrap::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    left: 0;
+    top: 0;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+}
+
+/* / * В каждом из левого и правого полей есть полукруг, в основном переполнение * / */
+.box-left,
+.box-right {
+    width: 50%;
+    height: 100%;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+}
+
+.box-left,
+.circle-left {
+    left: 0;
+}
+
+.box-right,
+.circle-right {
+    right: 0;
+}
+
+.circle-left,
+.circle-right {
+    width: 200%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 3px #F9783B solid;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+}
+
+/* / * Кружок в левом поле изначально показывает только правую половину * / */
+.circle-left {
+    border-top-color: transparent;
+    border-left-color: transparent;
+    transform: rotate(-45deg);
+    animation: circleRotate 2s linear forwards 2s infinite;
+}
+
+/* / * Кружок в поле справа изначально отображает только левую половину * / */
+.circle-right {
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    transform: rotate(-45deg);
+    animation: circleRotate 2s linear forwards infinite;
+}
+
+@keyframes circleRotate {
+    from {
+        transform: rotate(-45deg)
+    }
+
+    to {
+        transform: rotate(135deg)
+    }
+}
+
+
+
 
 .header__Btn2 img {
     padding: 6px;
-    border: 3px solid #F9783B;
+    border: 3px solid transparent;
     border-radius: 50%;
     position: relative;
 }
@@ -346,9 +438,7 @@ body {
     background: var(--bg-color-light);
 }
 
-.card:hover p {
-    color: var(--text-color-hover);
-}
+
 
 .card:active {
     transform: scale(1) translateZ(0);
@@ -413,6 +503,18 @@ body {
     text-align: center;
 }
 
+.card:hover p {
+    /* color: var(--text-color-hover); */
+    color: #fff !important;
+}
+
+
+
+
+
+
+
+
 .benefit__Body {
     display: grid;
     grid-template-columns: calc(50% - 50px) calc(50% - 50px);
@@ -460,6 +562,17 @@ body {
 .contactUs {
     background-color: #F5F9FC;
     margin: 50px 0;
+}
+
+.contactImg {
+    width: 540px;
+    height: 445px;
+
+}
+
+.contactImg img {
+    width: 100%;
+    height: 100%;
 }
 
 .contact__Body {
@@ -537,4 +650,324 @@ body {
     height: 50px;
     border: none;
     cursor: pointer;
+}
+
+.price {
+    padding: 50px 0;
+}
+
+.price__Body {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.price__Text {
+    display: flex;
+    flex-direction: column;
+    /* row-gap: 10px; */
+    align-items: flex-start;
+    max-width: 50%;
+}
+
+.price__Title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 52px;
+    line-height: 58px;
+    /* or 112% */
+
+    margin-bottom: 50px;
+    color: #073158;
+}
+
+.price__Desc {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 145.02%;
+    /* or 32px */
+    margin-bottom: 30px;
+
+    color: #747D85;
+
+}
+
+.price__Link {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.05em;
+
+    color: #FFFFFF;
+    background: #F9783B;
+    border-radius: 45px;
+    padding: 19px 45px;
+}
+
+.price__Block {
+    width: 350px;
+    height: 490px;
+    border-radius: 28px;
+    border: 3px solid #073158;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    filter: drop-shadow(0px 100px 80px rgba(0, 0, 0, 0.07)) drop-shadow(0px 41.7776px 33.4221px rgba(0, 0, 0, 0.0503198)) drop-shadow(0px 22.3363px 17.869px rgba(0, 0, 0, 0.0417275)) drop-shadow(0px 12.5216px 10.0172px rgba(0, 0, 0, 0.035)) drop-shadow(0px 6.6501px 5.32008px rgba(0, 0, 0, 0.0282725)) drop-shadow(0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0196802));
+}
+
+.price__Block__title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 28px;
+    /* identical to box height, or 110% */
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    color: #000000;
+}
+
+.price__Block__desc {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #000000;
+}
+
+.price__Block__num {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 28px;
+    /* identical to box height, or 71% */
+
+    text-align: center;
+
+    color: #000000;
+}
+
+.work__Content {
+    padding: 50px 0;
+    position: relative;
+
+}
+
+.work__Block {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.work__Block2 {
+    justify-content: end;
+}
+
+.work__Text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+    width: 490px;
+}
+
+.work__Text__title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 28px;
+    /* identical to box height, or 81% */
+
+    text-align: center;
+
+    color: #000000;
+
+}
+
+.work__Text__desc {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 28px;
+    /* or 142% */
+    max-width: 100%;
+    text-align: center;
+    text-transform: capitalize;
+    color: #000000;
+}
+
+.work__circle {
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #F9783B;
+    border-radius: 50%;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 28px;
+    text-align: center;
+    color: #FFFFFF;
+    position: absolute;
+    top: calc(140px);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.work__circle::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #D9D9D9;
+    width: 8px;
+    height: 350px;
+    border-radius: 10px;
+}
+
+.circle4::before {
+    display: none;
+}
+
+.circle2 {
+    top: calc(140px + 20px + 303px);
+}
+
+.circle3 {
+    top: calc(140px + 20px + 303px + 275px + 20px);
+}
+
+.circle4 {
+    top: calc(140px + 20px + 303px + 275px + 275px + 20px + 20px);
+}
+
+
+
+.telegram__subtitle {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 28px;
+    /* identical to box height, or 71% */
+
+    text-align: center;
+
+    color: #F9783B;
+}
+
+.telegram {}
+
+.telegram__Body {}
+
+.partners__subTitle {}
+
+.partners__Title {}
+
+.telegram__Group {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 50px 0;
+}
+
+.telegram__Text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    row-gap: 30px;
+}
+
+.telegram__Desc {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    /* or 158% */
+
+
+    color: #000000;
+}
+
+.telegram__link {
+    background: #F9783B;
+    border-radius: 10px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    /* identical to box height, or 158% */
+    cursor: pointer;
+
+
+    color: #FFFFFF;
+    padding: 11px 88px;
+}
+
+.telegram__Img {
+    position: relative;
+}
+
+.telegram__Arrow {
+    position: absolute;
+    top: -90%;
+    left: -50px;
+}
+
+.footer {
+    padding: 20px 0;
+}
+
+.footer__Body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer_menu {
+    display: flex;
+    align-items: center;
+    column-gap: 35px;
+}
+
+.footer_menu li {
+    list-style: none;
+    cursor: pointer;
+}
+
+.footer_menu li a {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+
+    color: #1E0E62;
+}
+
+.all {
+    position: absolute;
+    top: 0%;
+    margin-top: 0 !important;
+    opacity: 0;
+    transition: 2s;
+    /* font-weight: 500 !important; */
+}
+
+.card:hover .all {
+    opacity: 1;
+    top: 90%;
 }
