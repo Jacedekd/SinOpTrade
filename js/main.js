@@ -1,3 +1,5 @@
+let body = document.querySelector('body');
+
 let contactForm = document.querySelectorAll('.contactForm');
 
 
@@ -41,3 +43,14 @@ contactForm.forEach(item => {
 
     })
 })
+
+let hamburger = document.querySelector(".hamburger");
+let toolbarB = document.querySelector('.toolbar__Burger')
+let menuBg = document.querySelector('.menu-bg')
+  hamburger.addEventListener("click", function() {
+
+    hamburger.classList.toggle("is-active");
+    menuBg.classList.toggle("isActive");
+    body.classList.toggle('is-active');
+    toolbarB.classList.toggle('is-active');
+  });

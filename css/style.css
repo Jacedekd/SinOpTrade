@@ -55,6 +55,10 @@ body {
     justify-content: space-between;
 }
 
+.toolbar__Burger {
+    display: contents;
+}
+
 .toolbar__Menu {
     display: flex;
     padding-left: 0;
@@ -205,11 +209,13 @@ body {
     padding: 13px 30px;
     transition: .4s;
 }
+
 .header__Btn1:hover {
     color: #F9783B;
     outline: 2px solid #F9783B;
     background-color: #fff;
 }
+
 .header__Btn2 {
     font-style: normal;
     font-weight: 700;
@@ -309,7 +315,7 @@ body {
 
 .header__Btn2 img {
     padding: 6px;
-    border: 3px solid transparent;
+    border: 3px solid #f9773b5b;
     border-radius: 50%;
     position: relative;
 }
@@ -385,31 +391,31 @@ body {
 }
 
 .education {
-    --bg-color: #ffd861;
+    --bg-color: #073158;
     --bg-color-light: #ffeeba;
     --text-color-hover: #4C5656;
-    --box-shadow-color: rgba(255, 215, 97, 0.48);
+    --box-shadow-color: #07315847;
 }
 
 .credentialing {
-    --bg-color: #B8F9D3;
+    --bg-color: #073158;
     --bg-color-light: #e2fced;
     --text-color-hover: #4C5656;
-    --box-shadow-color: rgba(184, 249, 211, 0.48);
+    --box-shadow-color: #07315847;
 }
 
 .wallet {
-    --bg-color: #CEB2FC;
+    --bg-color: #073158;
     --bg-color-light: #F0E7FF;
     --text-color-hover: #fff;
-    --box-shadow-color: rgba(206, 178, 252, 0.48);
+    --box-shadow-color: #07315847;
 }
 
 .human-resources {
-    --bg-color: #DCE9FF;
+    --bg-color: #073158;
     --bg-color-light: #f1f7ff;
     --text-color-hover: #4C5656;
-    --box-shadow-color: rgba(220, 233, 255, 0.48);
+    --box-shadow-color: #07315847;
 }
 
 .card {
@@ -441,11 +447,11 @@ body {
 
 .card:hover .circle {
     border-color: var(--bg-color-light);
-    background: var(--bg-color);
+    background: #073158;
 }
 
 .card:hover .circle:after {
-    background: var(--bg-color-light);
+    background: #fff;
 }
 
 
@@ -994,7 +1000,7 @@ body {
 
 }
 
-.feedback__alert.is-active{
+.feedback__alert.is-active {
     opacity: 1;
     overflow: visible;
     top: 8vh;
@@ -1034,27 +1040,10 @@ body {
     color: #000;
 }
 
-@media screen and (max-width: 600px) {
-    .feedback__alertBody {
-        width: 80vw;
-        flex-direction: column;
-        align-items: center;
-    }
+.hamburger {
+    display: none;
+}
 
-    .feedback__alert.is-active {
-        top: 12vh;
-    }
-
-    .alert__text {
-        font-style: normal;
-        font-weight: 400;
-        font-size: 15px;
-        line-height: 21px;
-        text-align: center;
-    }
-
-    .alert__Icon {
-        width: 40px;
-        height: 40px;
-    }
+.menu-bg {
+    display: none;
 }
